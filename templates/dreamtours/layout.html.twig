@@ -1,0 +1,31 @@
+{% extends '../base.html.twig' %}
+
+{% block title %}
+  Agence ToursDSI22 !{% endblock %}
+
+{% block body %}
+
+{% set route = app.request.get('_route') %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="/"> toursDSI22</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href=" {{path('home')}}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href=" {{path('destination')}}">Destination</a>
+      </li>
+    
+    </ul>
+  
+  </div>
+</nav>
+ <div class="relative block md:flex items-center bg-white pr-3 rounded-lg block">
+        {% block main %}{% endblock %}
+      </div>
+{% endblock %}

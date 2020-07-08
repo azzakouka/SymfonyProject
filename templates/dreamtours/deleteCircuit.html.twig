@@ -1,0 +1,20 @@
+{% extends 'layout.html.twig' %}
+{% block title %} Circuit {% endblock %}
+{% block main %}
+    <div style="position:absolute;top:5px;width:100%;height: 500px;background-position: center;background-repeat: no-repeat;background-size: cover;background-image: url('https://www.vizeo.net/wp-content/uploads/2019/04/voyage_tranquille-min.jpg')">
+        <h1 class="text-teal-600">
+            Supprimer un Circuit
+        </h1>
+        <div>
+            {{ form_start(formCircuit) }}
+            <strong>{{ form_row(formCircuit.codeCircuit,{'attr':{'placeholder':'code du Circuit'}}) }}</strong>
+            <strong>{{ form_row(formCircuit.DesCircuit,{'attr':{'placeholder':'Description du Circuit'}}) }}</strong>
+            <strong>{{ form_row(formCircuit.dureeCircuit,{'attr':{'placeholder':'duree du Circuit'}}) }}</strong>
+            <strong>{{ form_row(formCircuit.ImageCircuit,{'attr':{'placeholder':'Image du Circuit'}}) }}</strong>
+            <button type="submit" class="btn" style="background-color: #AA3333">
+                Supprimer
+            </button>
+        </div>
+        {{ form_end(formCircuit) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'layout.html.twig' %}
+{% block title %} Details Circuit {% endblock %}
+
+{% block main %}
+    <div class="container" style=" background-color: #565656; margin-top: 20px; padding: 20px">
+        <div class="border rounded-lg" style="padding:20px">
+            <h1 style="color:teal"> Les vacances préférées</h1>
+            <div class="container">
+           <h4> <strong style="margin-left:100px;font-size: 25px">Départ : <span class="text-center" style="color: #AA3333; border-radius: 200px"> En ROUTE POUR {{ circuit.VilleEtape.DestVille.DesDest }} : {{ circuit.Etape.dureeCircuit}} jours </strong>
+           </h4>
+            </div>
+            <div class="flex-items-center justify-center">
+                <div class="border w-full p-5 rounded-lg">
+                    {% for c in circ %}
+                    {% if c.Etape.Id==id %}
+                    <div class="w-2/3">
+                        <div class="font-bold mb-4">
+                            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                                <img class="w-full" src="{{ c.VilleEtape.ImageVille }}"/>
+                                <p class="text-white">{{ c.OrdreEtape }}</p>
+                                <p class="text-white">
+                                    <strong>Decouverte de la ville {{ c.VilleEtape.DesVille }} pour {{ c.DureeEtape }} jours. </strong>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

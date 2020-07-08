@@ -1,0 +1,19 @@
+{% extends 'layout' %}
+{% block body %}
+<h1> Résultat de la Séléction</h1>
+
+<ul>
+    {% for ville in villes %}
+    <li>
+        {{ ville.id }}
+        <ul>
+            {% for etape in ville.etapes %}
+            <li>
+                {{ etape.id }}
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

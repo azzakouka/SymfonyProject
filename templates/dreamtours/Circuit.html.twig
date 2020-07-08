@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+{% block title %} Circuit {% endblock %}
+{% block main %}
+    <div style="position:absolute; top:10px;width: 100%;filter:blur(8px);height: 500px;background-size: cover;background-image: url('https://www.tourmag.com/photo/art/grande/40822840-34514598.jpg?v=1576579668')"></div>
+    <div id="gallery" class="bg-gallery no-padding">
+        <div class="container-fluid">
+            <h3>Nos Voyages</h3>
+            <a style="margin-left: 80px" href="{{ path('createCirc') }}"><button class=""btn>Ajouter un circuit</button></a>
+
+           <div class="container" style="text-align: center;">
+               <div class="home-doctors clearfix">
+                   <div class="container" style="text-align: center;position: absolute">
+                       <div class="row border">
+                           {% for circ in circuit %}
+    <div class="col-lg-6-md-6 col-sm-6 text-center doc-item">
+        <div style="border-radius: 5px" class="common-doctor fadeInUp">
+            <figure style="margin: 15px;width: 500px;height: 100px">
+                <a style="text-decoration: none" href="{{ circ.id }}"><div class="doc-img animate">
+    <p class="text-white text-left"> {{ circ.DesCircuit }}</p>
+    </div>
+    <p class="text-white text-left"> {{ circ.DureeCircuit }}</p>
+                </a>
+            </figure>
+        </div>
+    </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+
+{% endblock %}

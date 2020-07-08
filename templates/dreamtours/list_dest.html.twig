@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+{% block title %} Destination {% endblock %}
+{% block main %}
+<div style="position:absolute; top:10px;width: 100%;filter:blur(8px);height: 500px;background-size: cover;background-image: url('https://www.tourmag.com/photo/art/grande/40822840-34514598.jpg?v=1576579668')"></div>
+<div id="gallery" class="bg-gallery no-padding">
+    <div class="container-fluid">
+        <h3>Nos Destinations</h3>
+
+{% for dest in destination %}
+           <div class="doc">
+               <table>
+                   <tr><td>
+                           <div class="col-md-12 text-center doc-item">
+                               <div class="common-doctor fadeInUp clearfix ae-animation-fadeInUp"></div>
+                               <figure>
+                                   <a href="destination/{{ dest.id }}"> <img src="{{ des.Image}}" class="img-fluid
+                            " alt=""></a>{{ dest.DesDest }}
+                               </figure>
+                           </div>
+                       </td></tr>
+                   <td width="450px">
+                       <div><h3>Des voyages au {{dest.DesDest  }}</h3>
+                       <p class="text-center"> authentique et unique</p>
+                       </div>
+                   </td>
+                   <div class="flex content-between">
+                       <a href="new// {{ dest.id }}"><button class="btn">Modifier</button></a>
+                       <a href="new// {{ dest.id }}"><button class="btn">Supprimer</button></a>
+                   </div>
+               </table>
+           </div>
+       </div>
+</div>
+{% endblock %}
